@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src='../apple-icon-72x72.png' alt="logo" />
+        <img src='../saksham-haryana-logo.png' alt="logo" width={'10%'}/>
         <h1>DST-PWA</h1>
       </header>
     </div>
