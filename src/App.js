@@ -24,7 +24,7 @@ export default function App() {
       }
     });
   }, []);
-console.log('trainee.id', trainee.id);
+
   return (
     <div className="App">
       <header>
