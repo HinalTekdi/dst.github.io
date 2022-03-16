@@ -14,14 +14,14 @@
 }
 
 .App-header {
-  background-color: white;
+ /* background-color: #ffffff;*/
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #293C74 ;
+  color: #293c74;
 }
 
 .App-link {
@@ -34,5 +34,78 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.header-text {
+  margin-top: 35px;
+}
+.header-text-color {
+  color: #008080
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.shaksham-logo {
+  text-align: start;
+}
+.hariyana-logo {
+  text-align: end;
+}
+.haiyana-small-logo {
+  width: 50px
+}
+
+.shaksham-small-logo {
+  width: 10%;
+}
+.iti-small-logo {
+  width: 65px;
+  margin: 0 30px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .haiyana-small-logo {
+    width: 50px;
+  }
+  .shaksham-small-logo {
+    width: 20%;
+  }
+  .iti-small-logo {
+    width: 75px;
+    margin: 0 15px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .haiyana-small-logo {
+    width: 50px;
+  }
+  .shaksham-small-logo {
+    width: 25%;
+  }
+  .iti-small-logo {
+    width: 75px;
+    margin: 0 15px;
+  }
+}
+
+
+@media only screen and (max-width: 400px) {
+  .haiyana-small-logo {
+    width: 60%
+  }
+  .shaksham-small-logo {
+    width: 40%;
+  }
+  .iti-small-logo {
+    width: 100%;
+    margin: 0;
   }
 }

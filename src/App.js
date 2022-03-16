@@ -9,10 +9,10 @@ export default function App() {
 
     window.addEventListener('message', function (e) {
       const data = e.data;
+      console.log('data', data);
       try {
         const decoded = JSON.parse(data);
         if(decoded.channel === 'enketo') {
-          console.log('data', decoded);
           setTimeout( () => {
             setTrainee(decoded.message)
             setEnrl(false)
@@ -20,33 +20,48 @@ export default function App() {
         }
       }
       catch (e) {
-        console.log(e)
+        // console.log(e)
       }
     });
   }, []);
-
+console.log('trainee.id', trainee.id);
   return (
     <div className="App">
       <header>
-        <img src='../saksham-haryana-logo.png' alt="logo" width={'10%'}/>
-        <h1>DST-PWA</h1>
+        <div className="row logo">
+          <div className="shaksham-logo">
+            <img className="haiyana-small-logo" src='../GoH-Transparent.png' alt="logo"/>
+          </div>
+          <div>
+            <img className="iti-small-logo" src='../SDIT-Haryana.png' alt="logo"/>
+          </div>
+          <div className="hariyana-logo">
+            <img className="shaksham-small-logo" src='../saksham-haryana-logo.png' alt="logo"/>
+          </div>
+        </div>
+        <div className="header-text">
+          <h2 className="header-text-color">DST Trainee Attendance</h2>
+        </div>
+      </header>
+      <body>
         {isEnrl ?
           <iframe
           frameBorder="0"
-          src="http://localhost:8005/preview?xform=http://localhost:8000/enrollment.xml"
+          src="http://localhost:8005/preview?xform=http://localhost:8080/getForm/enrollment&id=enrollment"
           title="Enrollment"
-          width={'100%'}
-          height={'806px'}>
+          allow="geolocation"
+          width={'90%'}
+          height={'500px'}>
         </iframe> :
           <iframe
             frameBorder="0"
             src={`http://localhost:8005/preview?xform=http://localhost:8080/getFormPrefilled/${trainee.id}`}
             title="Test Geolocation"
             allow="geolocation"
-            width={'100%'}
-            height={'806px'}>
+            width={'90%'}
+            height={'650px'}>
           </iframe>}
-      </header>
+      </body>
     </div>
   )
 }
