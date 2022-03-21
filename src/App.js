@@ -55,7 +55,7 @@ export default function App() {
         </iframe> :
           <iframe
             frameBorder="0"
-            src={`http://localhost:8005/preview?xform=http://localhost:8080/getFormPrefilled/${trainee.id}`}
+            src={`http://localhost:8005/preview?xform=http://localhost:8080/getFormPrefilled/${trainee.id}&id=preFilled`}
             title="Test Geolocation"
             allow="geolocation"
             width={'90%'}
