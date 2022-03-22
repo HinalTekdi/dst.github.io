@@ -43,14 +43,13 @@ export default function App() {
           <h2 className="header-text-color">DST Trainee Attendance</h2>
         </div>
       </header>
-      <body>
         {isEnrl ?
           <iframe
           frameBorder="0"
           src="http://localhost:8005/preview?xform=http://localhost:8080/getForm/enrollment&id=enrollment"
           title="Enrollment"
           allow="geolocation"
-          width={'90%'}
+          width={'100%'}
           height={'500px'}>
         </iframe> :
           <iframe
@@ -58,10 +57,9 @@ export default function App() {
             src={`http://localhost:8005/preview?xform=http://localhost:8080/getFormPrefilled/${trainee.id}&id=preFilled`}
             title="Test Geolocation"
             allow="geolocation"
-            width={'90%'}
+            width={'100%'}
             height={'650px'}>
           </iframe>}
-      </body>
     </div>
   )
 }
