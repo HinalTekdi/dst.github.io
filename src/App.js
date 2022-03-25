@@ -16,7 +16,7 @@ export default function App() {
           setTimeout( () => {
             setTrainee(decoded.message)
             setEnrl(false)
-          }, 1000)
+           }, 1000)
         }
       }
       catch (e) {
@@ -45,16 +45,17 @@ export default function App() {
       </header>
         {isEnrl ?
           <iframe
-          frameBorder="0"
-          src="http://localhost:8005/preview?xform=http://localhost:8080/getForm/enrollment&id=enrollment"
-          title="Enrollment"
-          allow="geolocation"
-          width={'100%'}
-          height={'500px'}>
-        </iframe> :
+            frameBorder="0"
+            src={`${process.env.REACT_APP_ENKETO}/preview?xform=${process.env.REACT_APP_GET_FORM}/getForm/enrollment&id=enrollmentD`}
+            title="Enrollment"
+            allow="geolocation"
+            width={'100%'}
+            height={'500px'}>
+          </iframe>
+           :
           <iframe
             frameBorder="0"
-            src={`http://localhost:8005/preview?xform=http://localhost:8080/getFormPrefilled/${trainee.id}&id=preFilled`}
+            src={`${process.env.REACT_APP_ENKETO}/preview?xform=${process.env.REACT_APP_GET_FORM}/getFormPrefilled/${trainee.id}&id=preFilled`}
             title="Test Geolocation"
             allow="geolocation"
             width={'100%'}
