@@ -1,4 +1,4 @@
-name: main-check-deploy
+name: Deploy pages
 on:
   push:
     branches: [ master ]
